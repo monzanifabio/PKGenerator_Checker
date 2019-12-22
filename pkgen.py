@@ -27,23 +27,9 @@ def ping_address(publicAddress):
 	global wif
 	global publicKey
 
-	"""
-	sends Request to a Block Explorer	
-	Use blockcypher Python package to fetch unlimited balances...
-	"""
-	
-	balance = blockcypher.get_total_balance(publicAddress)
-	print balance
-
 	# "WifKey", "HexKey", "PublicAddress", "PublicKey", "Balance"
 	#Comment out this line if you wish to NOT record blank keys
-	logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress)
-
-	if float(balance) > 0.00000000:
-		logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress+' ,balance '+balance)
-		
-		print "Congratulations...alert the world cause you just made some sort of history friend!"
-
+	#logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress)
 
 def wif_conversion(pk):
 	global wif
@@ -58,7 +44,7 @@ def wif_conversion(pk):
 	payload = padding + checksum
 	wif = base58.b58encode(payload.decode('hex'))
 	print wif
-	
+
 
 while True:
 
@@ -75,20 +61,24 @@ while True:
 	binary_address = networkAppend + checksum
 	publicAddress = base58.b58encode(binary_address)
 	print publicAddress
-	while True:
-		try:
-			ping_address(publicAddress)	
-		except ValueError:
-			print "Aaaannnnd we got Timed Out"
-			print pk
-			print publicAddress
-			time.sleep(3)
-			continue
-		except KeyError:
-			print "we may be denied or something, keep the script moving"
-			time.sleep(10)			
-		break
-
-# msg = "I own your Private Key for %s" %(publicAddress)
-# signed_msg = sk.sign(msg)
-# encoded_msg = signed_msg.encode("hex")
+	#Store the ulr and the public address
+	url = 'https://blockchain.info/q/addressbalance/'+publicAddress
+	#Check the public address on blockchain.com to see the balance
+	req = requests.get(url)
+	#In case blockchain.com throws an error for to many requests
+	try:
+		#Convert the balance returned as an integer
+		convert = int(req.content)
+	except ValueError:
+		print 'Timeout, lets have a break'
+		time.sleep(5)
+	#Print the address balance
+	print convert
+	#If the address balance is more than 0 it creates a file and store public address and balance
+	if convert > 0:
+	    print 'We found something!'
+	    file = open('results.txt', 'a')
+	    file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
+	    file.close()
+	else:
+	    print 'Empty'
