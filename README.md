@@ -1,16 +1,24 @@
 # PKGenerator_Checker
-Generate Bitcoin Private Keys and check them against blockexplorer.com
+Generate Bitcoin Private Keys and check them against blockchain.com API
+This is a fork and update of the original [PKGenerator_Checker](https://github.com/Frankenmint/PKGenerator_Checker)
 
 Stupid Python Script that Generates random private keys and checks them in realtime...call this poor mans Mining for BTC - same chances as solo but you could find an address w/ money in it 🤑  This is for entertainment only and is designed to demonstrate how IMPOSSIBLE it is to realistically get a collision and take control of someone else's coin...Credits to @Shlomi for the inspiration...
 
+# Fork updates
+This fork updates includes:
+- Use blockchain.com API to check wallets balance instead of using blockcypher which limits the number of request can you can make per hours/minute.
+- If the script has ever to find a wallet with any balance will save the address and provate key along with the balance in a .txt file.
+
 # Instructions
 
-<strong>BIG OL DISCLAIMER</strong>:  I cannot emphasize this enough - this is for **DEMONSTRATION** and **ENTERTAINMENT** purposes ... you will have much better success finding employment, buying bitcoin and holding it than to have this little goofy script find a populated private key with a balance....though if you happen to find a populated address you may as well call the pressess and let em know you beat the odds with that extreme luck.
-
-1. Clone this script - download it or in the terminal use `git clone https://github.com/Frankenmint/PKGenerator_Checker/`
+1. Clone this script - download it or in the terminal use `git clone https://github.com/monzanifabio/PKGenerator_Checker.git`
 2. Let's install some dependencies!  `pip install ecdsa hashlib base58 requests cfscrape`
 3. Navigate to the directory: `cd PKGenerator_Checker`
-5. Run it! `python PkMaker.py`
+5. Run it! `python pkgen.py`
+
+# Troubleshooting
+
+If launching the script returns an error regarding some missing dependencies you might want to use `pip install --upgrade <dependencyName>` to fix those.
 
 # Notes
 
@@ -22,4 +30,3 @@ Stupid Python Script that Generates random private keys and checks them in realt
 Here's a demonstration of it in action
 
 ![demo working](http://g.recordit.co/z6QqeZyEM1.gif "We're Generating Private Keys and Checking Them on the Fly!")
-
