@@ -1,8 +1,9 @@
-# Provate Keys Generator Checker
+# Private Keys Generator Checker
 Generate Bitcoin Private Keys and check them against blockchain.com API
+
 This is a fork and update of the original [PKGenerator_Checker](https://github.com/Frankenmint/PKGenerator_Checker)
 
-Stupid Python Script that Generates random private keys and checks them in realtime...call this poor mans Mining for BTC - same chances as solo but you could find an address w/ money in it 🤑  This is for entertainment only and is designed to demonstrate how IMPOSSIBLE it is to realistically get a collision and take control of someone else's coin...Credits to @Shlomi for the inspiration...
+Stupid Python Script that Generates random private keys and checks them in realtime against blockchain.com API...call this poor mans Mining for BTC - same chances as solo but you could find an address w/ money in it 🤑  This is for entertainment only and is designed to demonstrate how IMPOSSIBLE it is to realistically get a collision and take control of someone else's coin...Credits to @Shlomi for the inspiration...
 
 # Fork updates
 This fork updates includes:
@@ -11,7 +12,9 @@ This fork updates includes:
 
 # Instructions
 
-1. Clone this script - download it or in the terminal use `git clone https://github.com/monzanifabio/pkgen-checker.git`
+1. Clone this script - download it or in the terminal use
+
+`git clone https://github.com/monzanifabio/pkgen-checker.git`
 2. Let's install some dependencies!  `pip install ecdsa hashlib base58 requests cfscrape`
 3. Navigate to the directory: `cd pkgen-checker`
 5. Run it! `python pkgen.py`
