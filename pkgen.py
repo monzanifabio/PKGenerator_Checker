@@ -28,8 +28,8 @@ def ping_address(publicAddress):
 	global publicKey
 
 	# "WifKey", "HexKey", "PublicAddress", "PublicKey", "Balance"
-	#Comment out this line if you wish to NOT record blank keys
-	#logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress)
+	#Comment the following line if you don't want to record blank keys
+	logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress)
 
 def wif_conversion(pk):
 	global wif
