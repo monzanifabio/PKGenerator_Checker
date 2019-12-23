@@ -11,9 +11,9 @@ This fork updates includes:
 
 # Instructions
 
-1. Clone this script - download it or in the terminal use `git clone https://github.com/monzanifabio/PKGenerator_Checker.git`
+1. Clone this script - download it or in the terminal use `git clone https://github.com/monzanifabio/pkgen-checker.git`
 2. Let's install some dependencies!  `pip install ecdsa hashlib base58 requests cfscrape`
-3. Navigate to the directory: `cd PKGenerator_Checker`
+3. Navigate to the directory: `cd pkgen-checker`
 5. Run it! `python pkgen.py`
 
 # Troubleshooting
