@@ -8,7 +8,6 @@ import requests
 import time
 from smtplib import SMTP_SSL as SMTP
 import logging
-import blockcypher
 
 
 wif = ""
