@@ -13,7 +13,8 @@ import logging
 wif = ""
 
 
-
+#Create a .csv logging file
+#Comment the next 4 lines if you don't want to create a log file
 logging.basicConfig(filename='BTC_PrivateKeys_'+time.strftime("%Y-%m-%d-%H-%M")+'.csv', \
 level=logging.INFO, format='%(message)s', datefmt='%Y-%m-%d,%H:%M:%S')
 logging.getLogger("requests").setLevel(logging.WARNING)
