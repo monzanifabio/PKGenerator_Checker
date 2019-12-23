@@ -1,4 +1,4 @@
-# PKGenerator_Checker
+# Provate Keys Generator Checker
 Generate Bitcoin Private Keys and check them against blockchain.com API
 This is a fork and update of the original [PKGenerator_Checker](https://github.com/Frankenmint/PKGenerator_Checker)
 
