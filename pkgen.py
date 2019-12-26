@@ -12,24 +12,10 @@ import logging
 
 wif = ""
 
-
-#Create a .csv logging file
-#Comment the next 4 lines if you don't want to create a log file
-logging.basicConfig(filename='BTC_PrivateKeys_'+time.strftime("%Y-%m-%d-%H-%M")+'.csv', \
-level=logging.INFO, format='%(message)s', datefmt='%Y-%m-%d,%H:%M:%S')
-logging.getLogger("requests").setLevel(logging.WARNING)
-logging.info ('"Timestamp", "WifKey", "PublicAddress"')
-
-
-
 def ping_address(publicAddress):
 	global pk
 	global wif
 	global publicKey
-
-	# "WifKey", "HexKey", "PublicAddress", "PublicKey", "Balance"
-	#Comment the following line if you don't want to record blank keys
-	logging.info (''+ time.strftime("%m-%d-%y %H:%M:%S") +','+ wif +','+publicAddress)
 
 def wif_conversion(pk):
 	global wif
