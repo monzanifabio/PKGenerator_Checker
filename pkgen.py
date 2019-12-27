@@ -55,6 +55,9 @@ while True:
 	try:
 		#Convert the balance returned as an integer
 		convert = int(req.content)
+		file = open('collection.txt', 'a')
+	    file.write(wif + '\n' + publicAddress + '\n')
+	    file.close()
 	except ValueError:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
