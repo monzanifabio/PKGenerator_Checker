@@ -12,7 +12,7 @@ import logging
 
 wif = ""
 
-def collect_addresses();
+def collect_addresses():
 	file = open('collection.txt', 'a')
 	file.write(wif + '\n' + publicAddress + '\n')
 	file.close()
