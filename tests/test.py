@@ -32,7 +32,7 @@ for line in lines:
     if convert > 0:
         print 'We found something!'
         file = open('results.txt', 'a')
-        file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
+        file.write(line + '\n' + str(convert) + '\n')
         file.close()
     else:
         print 'Empty'
