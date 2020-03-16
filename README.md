@@ -22,6 +22,11 @@ This fork updates includes:
 1. Navigate to the directory: `cd pkgen-checker`
 1. Run it! `python pkgen.py`
 
+# Using requirements.txt
+
+If you don't want to setup all the dependencies manually you can always run
+`pip install -r requirements.txt`
+
 # Troubleshooting
 
 If launching the script returns an error regarding some missing dependencies you might want to use `pip install --upgrade <dependencyName>` to fix those.
