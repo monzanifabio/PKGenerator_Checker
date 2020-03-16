@@ -11,8 +11,8 @@ To better understand what are the odds of finding a valid address with balance:
 
 # Fork updates
 This fork updates includes:
-- Use blockchain.com API to check wallets balance instead of using blockcypher which limits the number of request can you can make per hours/minute.
-- If the script has ever to find a wallet with any balance will save the address and provate key along with the balance in a .txt file.
+- Use blockchain.com API to check wallets balance instead of using blockcypher which limits the number of request you can make per hours/minute.
+- If the script has ever to find a wallet with any balance will save the address and private key along with the balance in a .txt file.
 
 # Instructions
 
