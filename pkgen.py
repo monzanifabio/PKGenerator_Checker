@@ -12,6 +12,11 @@ import logging
 
 wif = ""
 
+def collect_addresses():
+	file = open('collection.txt', 'a')
+	file.write(wif + '\n' + publicAddress + '\n')
+	file.close()
+
 def ping_address(publicAddress):
 	global pk
 	global wif
@@ -55,6 +60,8 @@ while True:
 	try:
 		#Convert the balance returned as an integer
 		convert = int(req.content)
+		# Comment this next line if you don't want to save all the generated addresses
+		collect_addresses()
 	except ValueError:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
