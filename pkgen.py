@@ -65,13 +65,13 @@ while True:
 	except ValueError:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
-	#Print the address balance
-	print convert
-	#If the address balance is more than 0 it creates a file and store public address and balance
-	if convert > 0:
-	    print 'We found something!'
-	    file = open('results.txt', 'a')
-	    file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
-	    file.close()
-	else:
-	    print 'Empty'
+		#Print the address balance
+		print convert
+		#If the address balance is more than 0 it creates a file and store public address and balance
+		if convert > 0:
+		    print 'We found something!'
+		    file = open('results.txt', 'a')
+		    file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
+		    file.close()
+		else:
+		    print 'Empty'
