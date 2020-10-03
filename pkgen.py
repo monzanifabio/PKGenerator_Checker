@@ -54,10 +54,10 @@ while True:
 	print publicAddress
 	#Store the ulr and the public address
 	url = 'https://blockchain.info/q/addressbalance/'+publicAddress
-	#Check the public address on blockchain.com to see the balance
-	req = requests.get(url)
 	#In case blockchain.com throws an error for to many requests
 	try:
+		#Check the public address on blockchain.com to see the balance
+		req = requests.get(url)
 		#Convert the balance returned as an integer
 		convert = int(req.content)
 		# Comment this next line if you don't want to save all the generated addresses
