@@ -62,7 +62,7 @@ while True:
 		convert = int(req.content)
 		# Comment this next line if you don't want to save all the generated addresses
 		collect_addresses()
-	except:
+	except ValueError:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
 	#Print the address balance
