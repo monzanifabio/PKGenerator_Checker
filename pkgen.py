@@ -72,6 +72,6 @@ while True:
 		    file.close()
 		else:
 		    print 'Empty'
-	except ValueError:
+	except:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
