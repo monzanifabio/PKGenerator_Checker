@@ -5,7 +5,6 @@ import ecdsa
 import hashlib
 import base58
 import requests
-from requests.exceptions import ConnectionError
 import time
 from smtplib import SMTP_SSL as SMTP
 import logging
@@ -57,14 +56,13 @@ while True:
 	url = 'https://blockchain.info/q/addressbalance/'+publicAddress
 	#Check the public address on blockchain.com to see the balance
 	req = requests.get(url)
-	#In case blockchain.com throws an error for too many requests
+	#In case blockchain.com throws an error for to many requests
 	try:
 		#Convert the balance returned as an integer
 		convert = int(req.content)
 		# Comment this next line if you don't want to save all the generated addresses
 		collect_addresses()
-	except (ValueError, ConnectionError), e:
-		pass
+	except ValueError:
 		print 'Timeout, lets have a break'
 		time.sleep(5)
 	#Print the address balance
