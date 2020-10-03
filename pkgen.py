@@ -5,6 +5,7 @@ import ecdsa
 import hashlib
 import base58
 import requests
+from requests.exceptions import ConnectionError
 import time
 from smtplib import SMTP_SSL as SMTP
 import logging
