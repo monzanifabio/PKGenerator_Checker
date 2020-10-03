@@ -54,24 +54,25 @@ while True:
 	print publicAddress
 	#Store the ulr and the public address
 	url = 'https://blockchain.info/q/addressbalance/'+publicAddress
-	#In case blockchain.com throws an error for to many requests
+	#Check the public address on blockchain.com to see the balance
+	req = requests.get(url)
+	#In case blockchain.com throws an error for too many requests
 	try:
-		#Check the public address on blockchain.com to see the balance
-		req = requests.get(url)
 		#Convert the balance returned as an integer
 		convert = int(req.content)
 		# Comment this next line if you don't want to save all the generated addresses
 		collect_addresses()
-	except ValueError:
+	except (ValueError, ConnectionError), e:
+		pass
 		print 'Timeout, lets have a break'
 		time.sleep(5)
-		#Print the address balance
-		print convert
-		#If the address balance is more than 0 it creates a file and store public address and balance
-		if convert > 0:
-		    print 'We found something!'
-		    file = open('results.txt', 'a')
-		    file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
-		    file.close()
-		else:
-		    print 'Empty'
+	#Print the address balance
+	print convert
+	#If the address balance is more than 0 it creates a file and store public address and balance
+	if convert > 0:
+	    print 'We found something!'
+	    file = open('results.txt', 'a')
+	    file.write(wif + '\n' + publicAddress + '\n' + str(convert) + '\n')
+	    file.close()
+	else:
+	    print 'Empty'
