@@ -1,9 +1,5 @@
-base58==1.0.3
-certifi==2019.11.28
+base58==2.1.1
 cfscrape==2.1.1
-chardet==3.0.4
-ecdsa==0.15
-idna==2.9
-requests==2.23.0
-six==1.14.0
-urllib3==1.25.8
+ecdsa==0.19.0
+lxml==5.3.0
+Requests==2.32.3
