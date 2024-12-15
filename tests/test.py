@@ -14,7 +14,7 @@ file = open('test.txt')
 lines = file.readlines()
 
 for line in lines:
-    print line
+    print (line)
     #Store the ulr and the public address
     url = 'https://blockchain.info/q/addressbalance/'+line
 	#Check the public address on blockchain.com to see the balance
@@ -24,15 +24,15 @@ for line in lines:
 		#Convert the balance returned as an integer
         convert = int(req.content)
     except ValueError:
-        print 'Timeout, lets have a break'
+        print ('Timeout, lets have a break')
         time.sleep(5)
 	#Print the address balance
-    print convert
+    print (convert)
 	#If the address balance is more than 0 it creates a file and store public address and balance
     if convert > 0:
-        print 'We found something!'
+        print ('We found something!')
         file = open('results.txt', 'a')
         file.write(line + '\n' + str(convert) + '\n')
         file.close()
     else:
-        print 'Empty'
+        print ('Empty')
